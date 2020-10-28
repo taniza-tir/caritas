@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROGRAMAS Y PROYECTOS</h1>
+    <table border= "2">
+        <tr>
+            <td>nombre</td>
+            <td>fecha_inicio</td>
+            <td>fecha_fin</td>
+            <td>donante</td>
+            <td>costo</td>
+            <td>municipio</td>
+            <td>area_intervencion</td>
+            <td>tipologia</td>
+           
+
+        </tr>
+
+        <ul>
+            {% for prog in object_list %}
+
+            <tr>
+                <td>{{ prog.nombre }}</td>
+                <td>{{ prog.fecha_inicio }}</td>
+                <td>{{ prog.fecha_fin }}</td>
+                <td>
+                <ul>
+                {% for donante in prog.donante.all %}
+                    <li>{{ donante.nombre }}</li>
+                {% endfor %}   
+                </ul> 
+                </td>
+                <td>{{ prog.costo }}</td>
+                <td>{{ prog.municipio }}</td>
+                <td>{{ prog.area_intervencion }}</td>
+                {% for tipologia in prog.tipologia.all %}
+                    <td>{{ tipologia.nombre }}</td>
+                {% endfor %} 
+            
+            </tr>
+        
+            {% endfor %}
+
+        </ul>
+    </table>
+
+
+    <CENTER>
+        <ul>
+            {% for prog in object_list %}
+        
+
+        <TABLE BORDER>
+        <CAPTION ALIGN=bottom>PROYECTOS</CAPTION>        
+        
+        
+        <TR ALIGN=CENTER>    
+        <TH>Nombre</TH>
+        <TD>{{ prog.nombre }}</TD>
+        </TR>
+        
+        <TR ALIGN=CENTER>    
+        <TH>Fecha de Inicio</TH>
+        <TD>{{ prog.fecha_inicio }}</TD>
+        </TR>
+        
+        <TR ALIGN=CENTER>    
+            <TH>Fecha Finalizacion</TH>
+            <TD>{{ prog.fecha_fin}}</TD>
+        </TR>
+
+        <TR ALIGN=CENTER>    
+            <TH>Donantes</TH>
+            <td>
+                <ul>
+                {% for donante in prog.donante.all %}
+                    <li>{{ donante.nombre }}</li>
+                {% endfor %}   
+                </ul> 
+                </td>
+        </TR>
+
+       
+        
+       
+        {% endfor %}
+    </ul>
+        </TABLE>
+        </CENTER>
+
+        <html>
+            <head><title>Ejemplo de tabla sencilla</title></head>
+            <body>
+            
+            <h1>Listado de cursos</h1>
+            
+            <table>
+            <tr>
+              <td><strong>Curso</strong></td>
+              <td><strong>Horas</strong></td>
+              <td><strong>Horario</strong></td>
+            </tr>
+            
+            <tr>
+              <td>CSS</td>
+              <td>20</td>
+              <td>16:00 - 20:00</td>
+            </tr>
+            
+            <tr>
+              <td>HTML</td>
+              <td>20</td>
+              <td>16:00 - 20:00</td>
+            </tr>
+            
+            <tr>
+              <td>Dreamweaver</td>
+              <td>60</td>
+              <td>16:00 - 20:00</td>
+            </tr>
+            </table>
+            
+            </body>
+            </html>
+</body>
+</html>

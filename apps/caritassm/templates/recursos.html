@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recursos Audiovisuales</h1>
+
+    <table border= "2">
+        <tr>
+            <td>Nombre</td>
+            <td>Enlace</td>
+        </tr>
+        <ul>
+            {% for recur in object_list %}
+
+            <tr>
+                <td>{{ recur.nombre }}</td> 
+               <td>
+
+                
+                
+                <iframe width="560" height="315" 
+                src="{{ recur.ubicacion }}"  
+                allowfullscreen></iframe>   
+                </td>
+            </tr>
+        
+            {% endfor %}
+
+        </ul>
+    </table>
+
+  
+</body>
+</html>

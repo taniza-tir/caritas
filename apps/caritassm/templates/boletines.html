@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BOLETINES</h1>
+    <table border= "2">
+        <tr>
+            <th>nombre</th>
+            <th>imagen</th>
+            
+
+        </tr>
+            {% for bolet in object_list %}
+
+            <tr>
+                <td>{{ bolet.nombre }}</td>
+                <td> <img  src="{{ bolet.imagen.url }} " width="600" height="800" ></td>
+                
+    
+            </tr>
+
+            {% endfor %}
+    </table>   
+</body>
+</html>
